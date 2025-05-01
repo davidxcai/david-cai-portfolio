@@ -1,10 +1,11 @@
 import { Project } from "../components/Project";
-import pictureOfMe from "../assets/david-cai.jpg";
-import { Image } from "@mantine/core";
-
+import { Button, Flex, SimpleGrid } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+import { ProfilePicture } from "../assets/ProfilePicture";
 import { projects } from "../data/projects";
 
 export function Homepage() {
+    const isMobile = useMediaQuery("(max-width: 768px)");
     function projectsList() {
         return projects.map((project) => (
             <Project project={project} key={project.name} />
@@ -12,27 +13,30 @@ export function Homepage() {
     }
     return (
         <div className="min-h-full flex flex-col">
-            <div className="text-white p-4 flex flex-row justify-between items-center gap-8 flex-wrap">
-                <Image
-                    src={pictureOfMe}
-                    alt="Picture of David Cai"
-                    fit="contain"
-                    w="100%"
-                    h="10em"
-                    radius="md"
-                />
-                <div>
-                    <h1 className="text-7xl font-bold">I'm David</h1>
-                    <div className="text-gray-400 text-2xl flex flex-row gap-4">
-                        <p>
-                            A hobbyist web developer & computer science student
-                        </p>
-                    </div>
+            <Flex
+                justify="center"
+                align="center"
+                gap="lg"
+                wrap={{ base: "wrap", sm: "nowrap" }}
+                className="mb-16 md:mb-24"
+            >
+                <ProfilePicture />
+                <div className="flex flex-col flex-wrap gap-4 w-full sm:w-1/2">
+                    <h1 className="text-7xl font-bold nanum-text">I'm David</h1>
+                    <p className="text-gray-400 text-2xl nanum-text">
+                        A hobbyist web developer & computer science student
+                    </p>
+                    {isMobile && <Button>Resume</Button>}
                 </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            </Flex>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                 {projectsList()}
             </div>
+            {/* <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
+                {projectsList()}
+            </SimpleGrid> */}
         </div>
     );
 }
+// className="text-white flex flex-row justify-between items-center gap-8 mb-32 flex-wrap"
+// className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"

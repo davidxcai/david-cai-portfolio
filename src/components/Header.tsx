@@ -20,7 +20,7 @@ export function Header({ isOpen, toggle }: HeaderProps) {
             }}
         >
             <div className="flex flex-row justify-between items-center p-4 max-w-7xl mx-auto">
-                <h1>David Cai</h1>
+                <h1 className="nanum-text text-4xl">David Cai</h1>
                 <Burger
                     opened={isOpen}
                     onClick={toggle}

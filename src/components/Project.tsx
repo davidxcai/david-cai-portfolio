@@ -1,19 +1,17 @@
 import { Project as ProjectType } from "../data/projects";
+import { Badge, Text } from "@mantine/core";
 
 export function Project({ project }: { project: ProjectType }) {
     function technologies() {
         return project.technologies.map((technology) => (
-            <span
-                key={technology}
-                className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs"
-            >
+            <Badge key={technology} variant="light">
                 {technology}
-            </span>
+            </Badge>
         ));
     }
     return (
         <div
-            className="flex flex-col gap-4 max-w-xl flex-grow border-2 border-gray-400"
+            className="flex flex-col max-w-xl flex-grow cursor-pointer"
             style={{ height: "100%" }}
             onClick={() => window.open(project.url, "_blank")}
         >
@@ -22,12 +20,12 @@ export function Project({ project }: { project: ProjectType }) {
                 alt={project.name}
                 className="aspect-[3/2] w-full object-cover rounded-lg"
             />
-            <div className="flex flex-col gap-2">
-                <h2 className="text-2xl font-bold">{project.name}</h2>
-                <p className="text-gray-600 text-sm text-wrap">
+            <div className="flex flex-col">
+                <h2 className="text-2xl font-bold mt-2">{project.name}</h2>
+                <Text c="dimmed" size="sm" className="text-wrap">
                     {project.description}
-                </p>
-                <div className="flex flex-row gap-2">{technologies()}</div>
+                </Text>
+                <div className="flex flex-row gap-2 mt-2">{technologies()}</div>
             </div>
         </div>
     );

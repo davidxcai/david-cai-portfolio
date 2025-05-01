@@ -10,3 +10,9 @@ body {
 button {
     cursor: pointer;
 }
+
+.nanum-text {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
