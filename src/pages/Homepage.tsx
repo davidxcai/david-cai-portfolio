@@ -1,5 +1,5 @@
 import { Project } from "../components/Project";
-import { Button, Flex, SimpleGrid } from "@mantine/core";
+import { Button, Flex } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { ProfilePicture } from "../assets/ProfilePicture";
 import { projects } from "../data/projects";
