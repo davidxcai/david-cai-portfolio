@@ -16,9 +16,9 @@ export function Homepage() {
                     alt="Picture of David Cai"
                     className=" flex-grow aspect-3/2"
                 />
-                <h1 className="text-7xl font-bold">David Cai!</h1>
+                <h1 className="text-7xl font-bold">I'm David</h1>
                 <div className="text-gray-400 text-2xl flex flex-row gap-4">
-                    <p>Your hobbyist web developer.</p>
+                    <p>A hobbyist web developer & computer science student</p>
                 </div>
             </div>
             <div className="flex flex-wrap gap-8">{projectsList()}</div>

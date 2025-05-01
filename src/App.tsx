@@ -1,15 +1,27 @@
-import { Header, Footer } from "./components";
+import { Header, Navbar, Footer } from "./components";
 import { Homepage } from "./pages/Homepage";
+import { AppShell } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 
 function App() {
+    const [opened, { toggle }] = useDisclosure();
     return (
-        <div className="min-h-screen flex flex-col">
-            <Header />
-            <div className="max-w-7xl mx-auto p-4">
+        <AppShell
+            header={{ height: 60 }}
+            navbar={{
+                width: 300,
+                breakpoint: "sm",
+                collapsed: { mobile: !opened, desktop: true },
+            }}
+            padding="md"
+        >
+            <Header isOpen={opened} toggle={toggle} />
+            <Navbar />
+            <AppShell.Main className="max-w-7xl mx-auto p-4">
                 <Homepage />
-            </div>
+            </AppShell.Main>
             <Footer />
-        </div>
+        </AppShell>
     );
 }
 
