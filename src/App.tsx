@@ -7,7 +7,7 @@ function App() {
     const [opened, { toggle }] = useDisclosure();
     return (
         <AppShell
-            header={{ height: 60 }}
+            header={{ height: 70 }}
             navbar={{
                 width: 300,
                 breakpoint: "sm",
@@ -17,7 +17,7 @@ function App() {
         >
             <Header isOpen={opened} toggle={toggle} />
             <Navbar />
-            <AppShell.Main className="max-w-7xl mx-auto p-4">
+            <AppShell.Main className="max-w-7xl mx-auto h-full">
                 <Homepage />
             </AppShell.Main>
             <Footer />

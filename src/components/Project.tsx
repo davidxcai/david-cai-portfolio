@@ -14,12 +14,13 @@ export function Project({ project }: { project: ProjectType }) {
     return (
         <div
             className="flex flex-col gap-4 max-w-xl flex-grow border-2 border-gray-400"
+            style={{ height: "100%" }}
             onClick={() => window.open(project.url, "_blank")}
         >
             <img
                 src={project.image}
                 alt={project.name}
-                className="aspect-3/2 rounded-lg"
+                className="aspect-[3/2] w-full object-cover rounded-lg"
             />
             <div className="flex flex-col gap-2">
                 <h2 className="text-2xl font-bold">{project.name}</h2>

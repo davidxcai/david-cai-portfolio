@@ -18,20 +18,21 @@ export function Header({ isOpen, toggle }: HeaderProps) {
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
             }}
-            className="flex flex-row justify-between items-center p-4"
         >
-            <h1>David Cai</h1>
-            <Burger
-                opened={isOpen}
-                onClick={toggle}
-                hiddenFrom="sm"
-                size="sm"
-            />
-            {!isMobile && (
-                <div className="flex flex-row gap-4">
-                    <Navlinks />
-                </div>
-            )}
+            <div className="flex flex-row justify-between items-center p-4 max-w-7xl mx-auto">
+                <h1>David Cai</h1>
+                <Burger
+                    opened={isOpen}
+                    onClick={toggle}
+                    hiddenFrom="sm"
+                    size="sm"
+                />
+                {!isMobile && (
+                    <div className="flex flex-row gap-4">
+                        <Navlinks />
+                    </div>
+                )}
+            </div>
         </AppShell.Header>
     );
 }
