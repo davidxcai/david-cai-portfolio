@@ -26,7 +26,11 @@ export function Homepage() {
                     <p className="text-gray-400 text-2xl nanum-text">
                         A hobbyist web developer & computer science student
                     </p>
-                    {isMobile && <Button>Resume</Button>}
+                    {isMobile && (
+                        <Button variant="outline" color="white">
+                            Resume
+                        </Button>
+                    )}
                 </div>
             </Flex>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
