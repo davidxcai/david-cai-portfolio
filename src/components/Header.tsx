@@ -11,10 +11,9 @@ export function Header({ isOpen, toggle }: HeaderProps) {
     const isMobile = useMediaQuery("(max-width: 768px)");
     return (
         <AppShell.Header
-            withBorder={true}
             style={{
                 borderBottom: "1px dashed #4b5563",
-                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
             }}
@@ -28,7 +27,7 @@ export function Header({ isOpen, toggle }: HeaderProps) {
                     size="sm"
                 />
                 {!isMobile && (
-                    <div className="flex flex-row gap-4">
+                    <div className="flex flex-row gap-4 font-bold">
                         <Navlinks />
                     </div>
                 )}

@@ -21,9 +21,11 @@ export function Homepage() {
                 className="mb-16 md:mb-24"
             >
                 <ProfilePicture />
-                <div className="flex flex-col flex-wrap gap-4 w-full sm:w-1/2">
-                    <h1 className="text-7xl font-bold nanum-text">I'm David</h1>
-                    <p className="text-gray-400 text-2xl nanum-text">
+                <div className="flex flex-col flex-wrap gap-4 w-full md:w-1/2">
+                    <h1 className="text-7xl sm:text-9xl font-bold nanum-text text-center md:text-left">
+                        I'm David
+                    </h1>
+                    <p className="text-gray-400 text-3xl sm:text-5xl nanum-text text-center md:text-left">
                         A hobbyist web developer & computer science student
                     </p>
                     {isMobile && (
@@ -33,7 +35,7 @@ export function Homepage() {
                     )}
                 </div>
             </Flex>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16 mb-16">
                 {projectsList()}
             </div>
             {/* <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">

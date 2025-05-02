@@ -1,3 +1,4 @@
+import mobiAdminPortal from "../assets/mobi-admin-portal.png";
 export type Project = {
     name: string;
     description: string;
@@ -10,7 +11,7 @@ export const projects: Project[] = [
         name: "Mobi Admin Portal",
         description: "Admin Dashboard for student organization.",
         technologies: ["React", "Supabase", "Typescript"],
-        image: "/images/portfolio.png",
+        image: mobiAdminPortal,
         url: "google.com",
     },
     {

@@ -1,11 +1,17 @@
-import { NavLink } from "@mantine/core";
+import { NavLink } from "react-router";
 
 export function Navlinks() {
     return (
         <>
-            <NavLink label="Projects" />
-            <NavLink label="About" />
-            <NavLink label="Resume" />
+            <NavLink to="/projects" className="p-2">
+                Projects
+            </NavLink>
+            <NavLink to="/about" className="p-2">
+                About
+            </NavLink>
+            <NavLink to="/resume" className="p-2">
+                Resume
+            </NavLink>
         </>
     );
 }
