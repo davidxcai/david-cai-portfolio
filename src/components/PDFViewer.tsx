@@ -7,10 +7,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     import.meta.url
 ).toString();
 
+// TODO: Add prop types
 // Define props type
-interface PDFViewerProps {
-    file: string | File | Uint8Array;
-}
 
 export function PDFViewer({ file }: any) {
     return (
