@@ -1,5 +1,3 @@
-import { PDFViewer } from "../components/PDFViewer";
-import pdf from "../assets/david-cai-resume.pdf";
 import {
     Button,
     Text,
