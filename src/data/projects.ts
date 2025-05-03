@@ -12,14 +12,14 @@ export const projects: Project[] = [
         description: "Admin Dashboard for student organization.",
         technologies: ["React", "Supabase", "Typescript"],
         image: mobiAdminPortal,
-        url: "google.com",
+        url: "https://mobi-admin-portal.vercel.app/",
     },
     {
         name: "Matcha Mail",
         description: "My personal portfolio website.",
         technologies: ["Supabase", "Shadcn", "Tailwind CSS"],
         image: "/images/portfolio.png",
-        url: "google.com",
+        url: "https://matcha-steel.vercel.app",
     },
     {
         name: "PokeDex",
