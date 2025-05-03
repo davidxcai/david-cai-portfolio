@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router";
 
 import "@mantine/core/styles.css";
 
-import "./index.css";
+import "./styles.css";
 import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
