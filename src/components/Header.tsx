@@ -7,6 +7,9 @@ interface HeaderProps {
     toggle: () => void;
 }
 
+// TODO:
+// name in header should be a link to homepage / scroll to top
+
 export function Header({ isOpen, toggle }: HeaderProps) {
     const isMobile = useMediaQuery("(max-width: 768px)");
     return (

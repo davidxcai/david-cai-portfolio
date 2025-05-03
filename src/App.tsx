@@ -4,6 +4,12 @@ import { AppShell } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Routes, Route } from "react-router";
 
+// TODO:
+// download and directly host fonts and images
+// toggle dark/light mode - user preference
+// possible move hamburger to left side
+// integrate mantine components instead of tailwind
+
 function App() {
     const [opened, { toggle }] = useDisclosure();
     return (

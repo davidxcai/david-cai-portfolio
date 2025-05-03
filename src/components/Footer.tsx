@@ -6,16 +6,16 @@ import {
     IconCheck,
 } from "@tabler/icons-react";
 
+// TODO:
+// style footer - improve visual heirarchy
+// adjust spacing
+// possibly add icons for links
+
 export function Footer() {
     return (
-        <footer className=" text-white p-4 mt-auto border-t-1 border-dashed border-gray-700">
-            <div className="max-w-7xl mx-auto p-4 flex flex-row items-stretch flex-wrap">
-                <div className="w-1/2 flex flex-col justify-between">
-                    <Text>© 2025 David Cai</Text>
-                    <Text>Built with Vite & Mantine UI</Text>
-                    <Text>Hosted on Vercel</Text>
-                </div>
-                <div className="w-1/2 flex flex-col gap-4 ">
+        <footer className=" text-white p-4 mb-4 mt-auto border-t-1 border-dashed border-gray-700">
+            <div className="max-w-7xl mx-auto flex flex-col text-center gap-4">
+                <div className="flex flex-row justify-center flex-wrap">
                     <Button
                         leftSection={<IconBrandLinkedin size={16} />}
                         variant="transparent"
@@ -58,6 +58,11 @@ export function Footer() {
                         )}
                     </CopyButton>
                 </div>
+
+                <Text c="dimmed">
+                    React · TypeScript · Mantine · Tailwind · Vite
+                </Text>
+                <Text>© 2025 David Cai</Text>
             </div>
         </footer>
     );

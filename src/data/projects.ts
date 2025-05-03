@@ -1,4 +1,5 @@
 import mobiAdminPortal from "../assets/mobi-admin-portal.png";
+import matcha from "../assets/matcha.png";
 export type Project = {
     name: string;
     description: string;
@@ -18,7 +19,7 @@ export const projects: Project[] = [
         name: "Matcha Mail",
         description: "My personal portfolio website.",
         technologies: ["Supabase", "Shadcn", "Tailwind CSS"],
-        image: "/images/portfolio.png",
+        image: matcha,
         url: "https://matcha-steel.vercel.app",
     },
     {

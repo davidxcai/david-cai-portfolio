@@ -3,6 +3,15 @@ import { Button, Flex } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { ProfilePicture } from "../assets/ProfilePicture";
 import { projects } from "../data/projects";
+import { NavLink } from "react-router-dom";
+
+// TODO:
+// somehow integrate projects path into homepage after certain scroll
+// create seperate projects component
+// projects will be loaded as links in project list section
+// - on project click, project list will unmount and will redirect to /project/:projectname
+// - on back click, project list will mount and redirect to /projects
+// fix animejs animation for svg
 
 export function Homepage() {
     const isMobile = useMediaQuery("(max-width: 768px)");
@@ -29,7 +38,12 @@ export function Homepage() {
                         A hobbyist web developer & computer science student
                     </p>
                     {isMobile && (
-                        <Button variant="outline" color="white">
+                        <Button
+                            variant="outline"
+                            color="white"
+                            component={NavLink}
+                            to="/resume"
+                        >
                             Resume
                         </Button>
                     )}

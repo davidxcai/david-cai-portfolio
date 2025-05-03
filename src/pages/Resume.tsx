@@ -1,6 +1,10 @@
 import { PDFViewer } from "../components/PDFViewer";
 import pdf from "../assets/david-cai-resume.pdf";
 
+// TODO:
+// instead of loading pdf onto page, create resume directly in page
+// add button to download pdf
+
 export function Resume() {
     return (
         <div className="flex flex-col items-center justify-center h-full">
