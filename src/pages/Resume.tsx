@@ -7,7 +7,7 @@ import {
     Stack,
     Group,
 } from "@mantine/core";
-import { IconDownload } from "@tabler/icons-react";
+import { IconDownload, IconPointFilled } from "@tabler/icons-react";
 import { SocialLinks } from "../components";
 
 // TODO:
@@ -17,7 +17,7 @@ export function Resume() {
     const heading = 2;
     const subheading = 3;
     const sectionSpacing = 8;
-    const listIcon = "•";
+    const listIcon = <IconPointFilled size={14} />;
     return (
         <Stack gap="xl">
             {/* Header */}
@@ -69,7 +69,7 @@ export function Resume() {
                         <Text fw={700}>Mobi Admin Portal {"(Ongoing)"}</Text>
                         <Text fw={700}>ReactJS, Node.js, MongoDB</Text>
                     </Group>
-                    <List icon={listIcon}>
+                    <List icon={listIcon} withPadding>
                         <List.Item>
                             Improving analytics accuracy by 80% from designing
                             and developing internal admin application for
@@ -90,7 +90,7 @@ export function Resume() {
                         <Text fw={700}>Matcha {"(Ongoing)"}</Text>
                         <Text fw={700}>Vite, Supabase, TanStack Query</Text>
                     </Group>
-                    <List icon={listIcon}>
+                    <List icon={listIcon} withPadding>
                         <List.Item>
                             Integrated web sockets for instant nofication of
                             messages.
@@ -112,7 +112,7 @@ export function Resume() {
                 <Title order={subheading}>Student Organization</Title>
                 <Divider variant="dashed" />
                 <Text fw={700}>Treasurer of Web Development club</Text>
-                <List icon={listIcon}>
+                <List withPadding icon={listIcon}>
                     <List.Item>
                         Manage and maintain organization funds, perform internal
                         finance audits, and filing annual taxes and earnings.
