@@ -1,7 +1,4 @@
 import { NavLink } from "react-router";
-import { Anchor } from "@mantine/core";
-import { useHover } from "@mantine/hooks";
-import { useSidebar } from "../context/SidebarContext";
 
 const links = [
     { label: "Home", link: "/" },
@@ -10,44 +7,18 @@ const links = [
     { label: "Resume", link: "/resume" },
 ];
 
-interface NavItemProps {
-    label: string;
-    link: string;
-    onClick: () => void;
-}
-
-function NavItem({ label, link, onClick }: NavItemProps) {
-    const { hovered, ref } = useHover();
-    return (
-        <Anchor
-            variant={hovered ? "gradient" : "text"}
-            gradient={hovered ? { from: "indigo", to: "blue" } : undefined}
-            c="white"
-            component={NavLink}
-            onClick={onClick}
-            to={link}
-            className="p-2"
-            underline="never"
-            fw={700}
-            ref={ref}
-        >
-            {label}
-        </Anchor>
-    );
-}
-
-export function Navlinks() {
-    const sidebar = useSidebar();
-    const closeSidebar = sidebar[1].close;
+export function NavLinks({ toggle }: { toggle?: () => void }) {
     return (
         <>
             {links.map((link) => (
-                <NavItem
+                <NavLink
                     key={link.label}
-                    label={link.label}
-                    link={link.link}
-                    onClick={closeSidebar}
-                />
+                    to={link.link}
+                    onClick={toggle}
+                    className="text-white hover:text-indigo-600 font-semibold"
+                >
+                    {link.label}
+                </NavLink>
             ))}
         </>
     );
