@@ -3,8 +3,6 @@ import { Navlinks } from "./Navlinks";
 
 // TODO:
 // swipe to close
-// prevent users from scrolling while navbar is open in mobile
-// close navbar after clicking a link
 
 export function Navbar() {
     return (

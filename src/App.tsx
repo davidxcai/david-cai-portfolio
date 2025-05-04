@@ -40,3 +40,13 @@ function App() {
 }
 
 export default App;
+
+{
+    /* <Routes>
+  <Route index element={<Homepage />} />
+  <Route path="/project/:projectName" element={<ProjectDetailPage />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/resume" element={<Resume />} />
+  <Route path="*" element={<NotFound />} />
+</Routes> */
+}

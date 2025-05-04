@@ -4,7 +4,8 @@ import { useHover } from "@mantine/hooks";
 import { useSidebar } from "../context/SidebarContext";
 
 const links = [
-    { label: "Projects", link: "/projects" },
+    { label: "Home", link: "/" },
+    { label: "Projects", link: "/#projects" },
     { label: "About", link: "/about" },
     { label: "Resume", link: "/resume" },
 ];

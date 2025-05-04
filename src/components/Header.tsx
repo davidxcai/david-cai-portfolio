@@ -1,7 +1,7 @@
 import { AppShell, Anchor, Burger } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { Navlinks } from "./Navlinks";
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
 import { useSidebar } from "../context/SidebarContext";
 
 interface HeaderProps {
@@ -10,9 +10,17 @@ interface HeaderProps {
 }
 
 export function Header({ isOpen, toggle }: HeaderProps) {
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
     const isMobile = useMediaQuery("(max-width: 768px)");
     const sidebar = useSidebar();
     const closeSidebar = sidebar[1].close;
+    const handleClick = () => {
+        if (isHomePage) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        closeSidebar();
+    };
     return (
         <AppShell.Header
             style={{
@@ -28,7 +36,7 @@ export function Header({ isOpen, toggle }: HeaderProps) {
                     c="white"
                     component={NavLink}
                     to="/"
-                    onClick={closeSidebar}
+                    onClick={handleClick}
                 >
                     <p className="nanum-text text-4xl">David Cai</p>
                 </Anchor>
