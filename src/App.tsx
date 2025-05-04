@@ -9,6 +9,8 @@ import { useSidebar } from "./context/SidebarContext";
 // toggle dark/light mode - user preference
 // possible move hamburger to left side
 // integrate mantine components instead of tailwind
+// add favicon - possibly cat head
+// fix grid sizing
 
 function App() {
     const [opened, { toggle }] = useSidebar();
@@ -20,21 +22,23 @@ function App() {
                 breakpoint: "sm",
                 collapsed: { mobile: !opened, desktop: true },
             }}
-            padding="md"
+            // padding="md"
         >
             <ScrollToTop />
             <Header isOpen={opened} toggle={toggle} />
             <Navbar />
-            <AppShell.Main className="max-w-7xl mx-auto">
-                <Routes>
-                    <Route index element={<Homepage />} />
-                    <Route path="/projects" element={<Homepage />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/resume" element={<Resume />} />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
+            <AppShell.Main>
+                <div className="max-w-7xl mx-auto p-4">
+                    <Routes>
+                        <Route index element={<Homepage />} />
+                        <Route path="/projects" element={<Homepage />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/resume" element={<Resume />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </div>
+                <Footer />
             </AppShell.Main>
-            <Footer />
         </AppShell>
     );
 }

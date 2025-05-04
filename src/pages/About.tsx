@@ -7,6 +7,10 @@ import {
     IconBrandLinkedin,
 } from "@tabler/icons-react";
 
+// TODO:
+// add a general about section with a short bio and fun facts + pictures
+// add a FAQ section
+
 const iconSize = 24;
 const data = [
     {
