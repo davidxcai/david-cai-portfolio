@@ -17,3 +17,8 @@ body {
 button {
     cursor: pointer;
 }
+
+/* tailwind.config.js or global.css */
+.nanum-text {
+    font-family: "Nanum Pen Script", cursive, sans-serif;
+}
