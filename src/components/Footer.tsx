@@ -13,11 +13,10 @@ export function Footer() {
                 <Group justify="center">
                     <SocialLinks />
                 </Group>
-
                 <Text c="dimmed">
                     React · TypeScript · Mantine · Tailwind · Vite
                 </Text>
-                <Text>© 2025 David Cai</Text>
+                <Text c="dimmed">© 2025 David Cai</Text>
             </div>
         </footer>
     );

@@ -47,7 +47,7 @@ export function Header({ isOpen, toggle }: HeaderProps) {
                     size="sm"
                 />
                 {!isMobile && (
-                    <div className="flex flex-row gap-4 font-bold">
+                    <div className="flex flex-row gap-8 font-bold">
                         <Navlinks />
                     </div>
                 )}

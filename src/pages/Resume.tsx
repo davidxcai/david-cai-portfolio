@@ -12,6 +12,7 @@ import { SocialLinks } from "../components";
 
 // TODO:
 // fix list item marker
+// change certain groups to flex for dynamic positioning
 
 export function Resume() {
     const heading = 2;
@@ -23,6 +24,10 @@ export function Resume() {
             {/* Header */}
             <Stack gap={sectionSpacing}>
                 <Title order={heading}>David Xien Cai</Title>
+                <Text c="teal">
+                    <span className="font-bold">Status:</span> Looking for
+                    internship
+                </Text>
                 <Group>
                     <SocialLinks />
                 </Group>
@@ -133,7 +138,7 @@ export function Resume() {
                 <Title order={subheading}>Education</Title>
                 <Divider variant="dashed" />
                 <Stack gap={0}>
-                    <Group justify="space-between">
+                    <Group justify="space-between" gap={0}>
                         <Text fw={700}>University of Texas at Arlington</Text>
                         <Text fw={700}>2024 - 2027</Text>
                     </Group>
@@ -142,7 +147,7 @@ export function Resume() {
                     </Text>
                 </Stack>
                 <Stack gap={0} mt={sectionSpacing}>
-                    <Group justify="space-between">
+                    <Group justify="space-between" gap={0}>
                         <Text fw={700}>University of California, Irvine</Text>
                         <Text fw={700}>2018 - 2019</Text>
                     </Group>
@@ -152,11 +157,12 @@ export function Resume() {
                 </Stack>
             </Stack>
 
-            <Group justify="center">
+            <Group justify="center" my="lg">
                 <Button
                     leftSection={<IconDownload />}
                     component="a"
                     href="/david-cai-resume.pdf"
+                    color="indigo"
                     download
                 >
                     Download

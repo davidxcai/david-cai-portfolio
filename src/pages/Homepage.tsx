@@ -49,7 +49,7 @@ export function Homepage() {
                         I'm David
                     </h1>
                     <p className="text-gray-400 text-3xl sm:text-5xl nanum-text text-center md:text-left">
-                        A hobbyist web developer & computer science student
+                        A fullstack web developer & computer science student
                     </p>
                     {isMobile && (
                         <Button

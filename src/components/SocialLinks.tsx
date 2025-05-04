@@ -17,7 +17,7 @@ export function SocialLinks() {
                 target="_blank"
                 p={0}
                 size="compact-md"
-                color="indigo"
+                color="white"
             >
                 LinkedIn
             </Button>
@@ -29,7 +29,7 @@ export function SocialLinks() {
                 target="_blank"
                 p={0}
                 size="compact-md"
-                color="indigo"
+                color="white"
             >
                 GitHub
             </Button>
@@ -40,7 +40,7 @@ export function SocialLinks() {
                         withArrow
                     >
                         <Button
-                            color={copied ? "teal" : "indigo"}
+                            color={copied ? "teal" : "white"}
                             onClick={copy}
                             leftSection={
                                 copied ? (
