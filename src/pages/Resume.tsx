@@ -11,8 +11,7 @@ import { IconDownload } from "@tabler/icons-react";
 import { SocialLinks } from "../components";
 
 // TODO:
-// instead of loading pdf onto page, create resume directly in page
-// add button to download pdf
+// fix list item marker
 
 export function Resume() {
     const heading = 2;
@@ -157,7 +156,7 @@ export function Resume() {
                 <Button
                     leftSection={<IconDownload />}
                     component="a"
-                    href="../assets/david-cai-resume.pdf"
+                    href="/david-cai-resume.pdf"
                     download
                 >
                     Download

@@ -1,8 +1,8 @@
-import { Header, Navbar, Footer } from "./components";
+import { Header, Navbar, Footer, ScrollToTop } from "./components";
 import { About, Homepage, NotFound, Resume } from "./pages";
 import { AppShell } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import { Routes, Route } from "react-router";
+import { useSidebar } from "./context/SidebarContext";
 
 // TODO:
 // download and directly host fonts and images
@@ -11,7 +11,7 @@ import { Routes, Route } from "react-router";
 // integrate mantine components instead of tailwind
 
 function App() {
-    const [opened, { toggle }] = useDisclosure();
+    const [opened, { toggle }] = useSidebar();
     return (
         <AppShell
             header={{ height: 70 }}
@@ -22,6 +22,7 @@ function App() {
             }}
             padding="md"
         >
+            <ScrollToTop />
             <Header isOpen={opened} toggle={toggle} />
             <Navbar />
             <AppShell.Main className="max-w-7xl mx-auto">

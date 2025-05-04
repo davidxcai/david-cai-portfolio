@@ -1,17 +1,18 @@
-import { AppShell, Burger } from "@mantine/core";
+import { AppShell, Anchor, Burger } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { Navlinks } from "./Navlinks";
+import { NavLink } from "react-router";
+import { useSidebar } from "../context/SidebarContext";
 
 interface HeaderProps {
     isOpen: boolean;
     toggle: () => void;
 }
 
-// TODO:
-// name in header should be a link to homepage / scroll to top
-
 export function Header({ isOpen, toggle }: HeaderProps) {
     const isMobile = useMediaQuery("(max-width: 768px)");
+    const sidebar = useSidebar();
+    const closeSidebar = sidebar[1].close;
     return (
         <AppShell.Header
             style={{
@@ -22,7 +23,15 @@ export function Header({ isOpen, toggle }: HeaderProps) {
             }}
         >
             <div className="flex flex-row justify-between items-center p-4 max-w-7xl mx-auto">
-                <h1 className="nanum-text text-4xl">David Cai</h1>
+                <Anchor
+                    underline="never"
+                    c="white"
+                    component={NavLink}
+                    to="/"
+                    onClick={closeSidebar}
+                >
+                    <p className="nanum-text text-4xl">David Cai</p>
+                </Anchor>
                 <Burger
                     opened={isOpen}
                     onClick={toggle}

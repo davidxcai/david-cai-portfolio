@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { MantineProvider } from "@mantine/core";
 import { BrowserRouter } from "react-router";
+import { SidebarProvider } from "./context/SidebarContext.tsx";
 
 import "@mantine/core/styles.css";
 
@@ -12,7 +13,9 @@ createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <BrowserRouter>
             <MantineProvider defaultColorScheme="dark">
-                <App />
+                <SidebarProvider>
+                    <App />
+                </SidebarProvider>
             </MantineProvider>
         </BrowserRouter>
     </StrictMode>
