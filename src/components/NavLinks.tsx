@@ -27,7 +27,7 @@ export function NavLinks({
                     key={link.label}
                     to={link.link}
                     onClick={opened ? toggle : undefined}
-                    className={`font-semibold hover:text-indigo-500 uppercase text-sm ${
+                    className={`font-semibold hover:text-indigo-500 uppercase ${
                         pathname === link.link
                             ? "text-indigo-500"
                             : "text-white"

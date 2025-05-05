@@ -19,10 +19,11 @@ export function Project({ project }: { project: ProjectType }) {
                 src={project.image}
                 alt={project.name}
                 className="aspect-[3/2] w-full object-cover rounded-lg"
+                loading="lazy"
             />
             <div className="flex flex-col">
                 <h2 className="text-2xl font-bold mt-2">{project.name}</h2>
-                <p className="text-gray-500 text-sm">{project.description}</p>
+                <p className="text-gray-400 text-sm">{project.description}</p>
                 <div className="flex flex-row gap-2 mt-2">{technologies()}</div>
             </div>
         </div>

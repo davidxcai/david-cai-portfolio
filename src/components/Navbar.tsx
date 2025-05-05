@@ -2,6 +2,7 @@ import { Burger, Collapse, Portal } from "@mantine/core";
 import { NavLink, useLocation } from "react-router-dom";
 import { NavLinks } from "./NavLinks";
 import { useMediaQuery, useDisclosure } from "@mantine/hooks";
+import { useEffect } from "react";
 
 // TODO:
 // swipe to close
@@ -12,9 +13,14 @@ function scrollToTop() {
 
 export function Navbar() {
     const isMobile = useMediaQuery("(max-width: 768px)");
-    const [opened, { toggle }] = useDisclosure(false);
+    const [opened, { toggle, close }] = useDisclosure(false);
     const location = useLocation();
     const isHomePage = location.pathname === "/";
+    useEffect(() => {
+        if (!isMobile) {
+            close();
+        }
+    }, [isMobile]);
 
     return (
         <>
@@ -36,15 +42,15 @@ export function Navbar() {
                                     aria-label="Toggle navigation"
                                 />
                             ) : (
-                                <div className="flex flex-row gap-6">
-                                    <NavLinks toggle={toggle} opened={opened} />
+                                <div className="flex flex-row gap-6 text-sm">
+                                    <NavLinks toggle={close} opened={opened} />
                                 </div>
                             )}
                         </div>
                     </div>
                     <Collapse in={opened}>
-                        <div className="flex flex-col gap-4 justify-center items-center py-8">
-                            <NavLinks toggle={toggle} opened={opened} />
+                        <div className="flex flex-col gap-4 justify-center items-center py-8 text-lg">
+                            <NavLinks toggle={close} opened={opened} />
                         </div>
                     </Collapse>
                 </nav>

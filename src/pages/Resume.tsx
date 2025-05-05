@@ -1,4 +1,4 @@
-import { Button, Divider } from "@mantine/core";
+import { Button } from "@mantine/core";
 import { IconDownload } from "@tabler/icons-react";
 import { SocialLinks } from "../components";
 
@@ -6,13 +6,18 @@ import { SocialLinks } from "../components";
 // fix list item marker
 // change certain groups to flex for dynamic positioning
 
+const divider = <div className="border-t-1 border-dashed border-gray-700" />;
+
 const styles = {
     container: "flex flex-col gap-8",
-    section: "flex flex-col gap-2",
+    section: "flex flex-col gap-4",
+    subsection: "flex flex-col gap-1",
     heading: "font-semibold text-2xl",
     subheading: "font-bold",
     divider: "dashed",
     list: "list-disc pl-8",
+    dimmed: "text-gray-400",
+    between: "flex flex-wrap justify-between",
 };
 
 export function Resume() {
@@ -34,7 +39,7 @@ export function Resume() {
             {/* Summary */}
             <div className={styles.section}>
                 <h2 className={styles.heading}>Summary</h2>
-                <Divider variant={styles.divider} />
+                {divider}
                 <p>
                     Computer science student graduating in spring 2027 and
                     fullstack web developer with 2+ years of experience
@@ -47,7 +52,7 @@ export function Resume() {
             {/* Technical Skills */}
             <div className={styles.section}>
                 <h2 className={styles.heading}>Technical Skills</h2>
-                <Divider variant={styles.divider} />
+                {divider}
                 <p>
                     <span className={styles.subheading}>
                         Programming Languages:{" "}
@@ -70,9 +75,9 @@ export function Resume() {
             {/* Projects */}
             <div className={styles.section}>
                 <h2 className={styles.heading}>Projects</h2>
-                <Divider variant={styles.divider} />
+                {divider}
                 <div className={styles.section}>
-                    <div className="flex flex-wrap justify-between">
+                    <div className={styles.between}>
                         <h2 className={styles.subheading}>
                             Mobi Admin Portal {"(Ongoing)"}
                         </h2>
@@ -100,7 +105,7 @@ export function Resume() {
                     </ul>
                 </div>
                 <div className={styles.section}>
-                    <div className="flex flex-wrap justify-between">
+                    <div className={styles.between}>
                         <h2 className={styles.subheading}>
                             Matcha {"(Ongoing)"}
                         </h2>
@@ -108,10 +113,6 @@ export function Resume() {
                             Vite, Supabase, TanStack Query
                         </h2>
                     </div>
-                    {/* <Group justify="space-between">
-                        <Text fw={700}>Matcha {"(Ongoing)"}</Text>
-                        <Text fw={700}>Vite, Supabase, TanStack Query</Text>
-                    </Group> */}
                     <ul className={styles.list}>
                         <li>
                             {" "}
@@ -135,7 +136,7 @@ export function Resume() {
             {/* Student Organization */}
             <div className={styles.section}>
                 <h2 className={styles.heading}>Student Organization</h2>
-                <Divider variant={styles.divider} />
+                {divider}
                 <h2 className={styles.subheading}>
                     Treasurer of Web Development club
                 </h2>
@@ -158,22 +159,22 @@ export function Resume() {
             {/* Education */}
             <div className={styles.section}>
                 <h2 className={styles.heading}>Education</h2>
-                <Divider variant={styles.divider} />
-                <div className="flex flex-col">
-                    <div className="flex flex-wrap justify-between font-bold">
+                {divider}
+                <div className={styles.subsection}>
+                    <div className={styles.between}>
                         <p>University of Texas at Arlington</p>
                         <p>2024 - 2027</p>
                     </div>
-                    <p className="text-gray-500">
+                    <p className={styles.dimmed}>
                         Computer Science B.S. / Honors College, 4.0 GPA
                     </p>
                 </div>
-                <div className="flex flex-col">
-                    <div className="flex flex-wrap justify-between font-bold">
+                <div className={styles.subsection}>
+                    <div className={styles.between}>
                         <p>University of California, Irvine</p>
                         <p>2018 - 2019</p>
                     </div>
-                    <p className="text-gray-500">
+                    <p className={styles.dimmed}>
                         Web Development Certificate / Agile and SCRUM training
                     </p>
                 </div>
