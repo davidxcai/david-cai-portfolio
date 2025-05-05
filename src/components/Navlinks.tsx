@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router-dom";
 
 const links = [
     { label: "Home", link: "/" },
@@ -7,15 +7,31 @@ const links = [
     { label: "Resume", link: "/resume" },
 ];
 
-export function NavLinks({ toggle }: { toggle?: () => void }) {
+// TODO:
+// - add scroll to top on link click
+// possibly remove scroll to top on path change
+
+export function NavLinks({
+    toggle,
+    opened,
+}: {
+    toggle?: () => void;
+    opened?: boolean;
+}) {
+    const { pathname } = useLocation();
+
     return (
         <>
             {links.map((link) => (
                 <NavLink
                     key={link.label}
                     to={link.link}
-                    onClick={toggle}
-                    className="text-white hover:text-indigo-600 font-semibold"
+                    onClick={opened ? toggle : undefined}
+                    className={`font-semibold hover:text-indigo-500 uppercase text-sm ${
+                        pathname === link.link
+                            ? "text-indigo-500"
+                            : "text-white"
+                    }`}
                 >
                     {link.label}
                 </NavLink>

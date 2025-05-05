@@ -19,11 +19,11 @@ export function Navbar() {
     return (
         <>
             <Portal>
-                <nav className="w-full border-b-1 border-dashed border-gray-700 bg-black/50 backdrop-blur-sm p-4 fixed top-0 z-10">
+                <nav className="w-full border-b-1 border-dashed border-gray-700 bg-black/70 backdrop-blur-sm p-4 fixed top-0 z-10">
                     <div className=" flex flex-row justify-between items-center max-w-7xl mx-auto">
                         <NavLink
                             to="/"
-                            className="text-4xl nanum-text mt-1 hover:text-indigo-600"
+                            className="text-4xl nanum-text mt-1 hover:text-indigo-500"
                             onClick={isHomePage ? scrollToTop : undefined}
                         >
                             David Cai
@@ -36,13 +36,15 @@ export function Navbar() {
                                     aria-label="Toggle navigation"
                                 />
                             ) : (
-                                <NavLinks toggle={toggle} />
+                                <div className="flex flex-row gap-6">
+                                    <NavLinks toggle={toggle} opened={opened} />
+                                </div>
                             )}
                         </div>
                     </div>
                     <Collapse in={opened}>
                         <div className="flex flex-col gap-4 justify-center items-center py-8">
-                            <NavLinks toggle={toggle} />
+                            <NavLinks toggle={toggle} opened={opened} />
                         </div>
                     </Collapse>
                 </nav>

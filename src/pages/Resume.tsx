@@ -1,163 +1,185 @@
-import {
-    Button,
-    Text,
-    Title,
-    Divider,
-    List,
-    Stack,
-    Group,
-} from "@mantine/core";
-import { IconDownload, IconPointFilled } from "@tabler/icons-react";
+import { Button, Divider } from "@mantine/core";
+import { IconDownload } from "@tabler/icons-react";
 import { SocialLinks } from "../components";
 
 // TODO:
 // fix list item marker
 // change certain groups to flex for dynamic positioning
 
+const styles = {
+    container: "flex flex-col gap-8",
+    section: "flex flex-col gap-2",
+    heading: "font-semibold text-2xl",
+    subheading: "font-bold",
+    divider: "dashed",
+    list: "list-disc pl-8",
+};
+
 export function Resume() {
-    const heading = 2;
-    const subheading = 3;
-    const sectionSpacing = 8;
-    const listIcon = <IconPointFilled size={14} />;
     return (
-        <Stack gap="xl">
+        <div className={styles.container}>
             {/* Header */}
-            <Stack gap={sectionSpacing}>
-                <Title order={heading}>David Xien Cai</Title>
-                <Text c="teal">
+            <div className={styles.section}>
+                <h1 className="font-bold text-3xl">David Xien Cai</h1>
+                <p className="text-teal-500">
+                    {" "}
                     <span className="font-bold">Status:</span> Looking for
                     internship
-                </Text>
-                <Group>
+                </p>
+                <div className="flex gap-4">
                     <SocialLinks />
-                </Group>
-            </Stack>
+                </div>
+            </div>
 
             {/* Summary */}
-            <Stack gap={sectionSpacing}>
-                <Title order={subheading}>Summary</Title>
-                <Divider variant="dashed" />
-                <Text>
+            <div className={styles.section}>
+                <h2 className={styles.heading}>Summary</h2>
+                <Divider variant={styles.divider} />
+                <p>
                     Computer science student graduating in spring 2027 and
                     fullstack web developer with 2+ years of experience
                     designing, developing, and managing sites and internal
                     applications. Proficient in communications and team
                     management with leadership experience.
-                </Text>
-            </Stack>
+                </p>
+            </div>
 
             {/* Technical Skills */}
-            <Stack gap={sectionSpacing}>
-                <Title order={subheading}>Technical Skills</Title>
-                <Divider variant="dashed" />
-                <Text>
-                    <span className="font-bold">Programming Languages:</span>{" "}
+            <div className={styles.section}>
+                <h2 className={styles.heading}>Technical Skills</h2>
+                <Divider variant={styles.divider} />
+                <p>
+                    <span className={styles.subheading}>
+                        Programming Languages:{" "}
+                    </span>
                     TypeScript, JavaScript, Node.js, ReactJS, SQL, NoSQL,
                     Python, C, C++
-                </Text>
-                <Text>
-                    <span className="font-bold">Operating Systems:</span> macOS,
-                    Windows
-                </Text>
-                <Text>
-                    <span className="font-bold">Tools:</span> Tailwind, Sass,
-                    Mantine UI, Redux, TanStack Query, Supabase, Vercel
-                </Text>
-            </Stack>
+                </p>
+                <p>
+                    <span className={styles.subheading}>
+                        Operating Systems:{" "}
+                    </span>
+                    macOS, Windows
+                </p>
+                <p>
+                    <span className={styles.subheading}>Tools: </span>Tailwind,
+                    Sass, Mantine UI, Redux, TanStack Query, Supabase, Vercel
+                </p>
+            </div>
 
             {/* Projects */}
-            <Stack gap={sectionSpacing}>
-                <Title order={subheading}>Projects</Title>
-                <Divider variant="dashed" />
-                <Stack gap={4} mt={sectionSpacing}>
-                    <Group justify="space-between">
-                        <Text fw={700}>Mobi Admin Portal {"(Ongoing)"}</Text>
-                        <Text fw={700}>ReactJS, Node.js, MongoDB</Text>
-                    </Group>
-                    <List icon={listIcon} withPadding>
-                        <List.Item>
+            <div className={styles.section}>
+                <h2 className={styles.heading}>Projects</h2>
+                <Divider variant={styles.divider} />
+                <div className={styles.section}>
+                    <div className="flex flex-wrap justify-between">
+                        <h2 className={styles.subheading}>
+                            Mobi Admin Portal {"(Ongoing)"}
+                        </h2>
+                        <h2 className={styles.subheading}>
+                            ReactJS, Node.js, MongoDB
+                        </h2>
+                    </div>
+                    <ul className={styles.list}>
+                        <li>
+                            {" "}
                             Improving analytics accuracy by 80% from designing
                             and developing internal admin application for
                             managing users and logging event attendance.
-                        </List.Item>
-                        <List.Item>
+                        </li>
+                        <li>
+                            {" "}
                             Responsible for database architecure, server
                             configuration, and optimizing API requests.
-                        </List.Item>
-                        <List.Item>
+                        </li>
+                        <li>
+                            {" "}
                             Implemented role-based authentication and increased
                             site security by 100%.
-                        </List.Item>
-                    </List>
-                </Stack>
-                <Stack gap={4} mt={sectionSpacing}>
-                    <Group justify="space-between">
+                        </li>
+                    </ul>
+                </div>
+                <div className={styles.section}>
+                    <div className="flex flex-wrap justify-between">
+                        <h2 className={styles.subheading}>
+                            Matcha {"(Ongoing)"}
+                        </h2>
+                        <h2 className={styles.subheading}>
+                            Vite, Supabase, TanStack Query
+                        </h2>
+                    </div>
+                    {/* <Group justify="space-between">
                         <Text fw={700}>Matcha {"(Ongoing)"}</Text>
                         <Text fw={700}>Vite, Supabase, TanStack Query</Text>
-                    </Group>
-                    <List icon={listIcon} withPadding>
-                        <List.Item>
+                    </Group> */}
+                    <ul className={styles.list}>
+                        <li>
+                            {" "}
                             Integrated web sockets for instant nofication of
                             messages.
-                        </List.Item>
-                        <List.Item>
+                        </li>
+                        <li>
+                            {" "}
                             Built interactice messaging tracking system to
                             visualize delivery.
-                        </List.Item>
-                        <List.Item>
+                        </li>
+                        <li>
+                            {" "}
                             Implemented secure user authentication and
                             end-to-end encryption.
-                        </List.Item>
-                    </List>
-                </Stack>
-            </Stack>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
             {/* Student Organization */}
-            <Stack gap={sectionSpacing}>
-                <Title order={subheading}>Student Organization</Title>
-                <Divider variant="dashed" />
-                <Text fw={700}>Treasurer of Web Development club</Text>
-                <List withPadding icon={listIcon}>
-                    <List.Item>
+            <div className={styles.section}>
+                <h2 className={styles.heading}>Student Organization</h2>
+                <Divider variant={styles.divider} />
+                <h2 className={styles.subheading}>
+                    Treasurer of Web Development club
+                </h2>
+                <ul className={styles.list}>
+                    <li>
                         Manage and maintain organization funds, perform internal
                         finance audits, and filing annual taxes and earnings.
-                    </List.Item>
-                    <List.Item>
+                    </li>
+                    <li>
                         Organize and host workshops on web development
                         technologies.
-                    </List.Item>
-                    <List.Item>
+                    </li>
+                    <li>
                         Collaborate with adjacent organizations to host
                         fundraising events.
-                    </List.Item>
-                </List>
-            </Stack>
+                    </li>
+                </ul>
+            </div>
 
             {/* Education */}
-            <Stack gap={sectionSpacing}>
-                <Title order={subheading}>Education</Title>
-                <Divider variant="dashed" />
-                <Stack gap={0}>
-                    <Group justify="space-between" gap={0}>
-                        <Text fw={700}>University of Texas at Arlington</Text>
-                        <Text fw={700}>2024 - 2027</Text>
-                    </Group>
-                    <Text c="dimmed">
+            <div className={styles.section}>
+                <h2 className={styles.heading}>Education</h2>
+                <Divider variant={styles.divider} />
+                <div className="flex flex-col">
+                    <div className="flex flex-wrap justify-between font-bold">
+                        <p>University of Texas at Arlington</p>
+                        <p>2024 - 2027</p>
+                    </div>
+                    <p className="text-gray-500">
                         Computer Science B.S. / Honors College, 4.0 GPA
-                    </Text>
-                </Stack>
-                <Stack gap={0} mt={sectionSpacing}>
-                    <Group justify="space-between" gap={0}>
-                        <Text fw={700}>University of California, Irvine</Text>
-                        <Text fw={700}>2018 - 2019</Text>
-                    </Group>
-                    <Text c="dimmed">
+                    </p>
+                </div>
+                <div className="flex flex-col">
+                    <div className="flex flex-wrap justify-between font-bold">
+                        <p>University of California, Irvine</p>
+                        <p>2018 - 2019</p>
+                    </div>
+                    <p className="text-gray-500">
                         Web Development Certificate / Agile and SCRUM training
-                    </Text>
-                </Stack>
-            </Stack>
+                    </p>
+                </div>
+            </div>
 
-            <Group justify="center" my="lg">
+            <div className="flex justify-center my-4">
                 <Button
                     leftSection={<IconDownload />}
                     component="a"
@@ -167,7 +189,7 @@ export function Resume() {
                 >
                     Download
                 </Button>
-            </Group>
-        </Stack>
+            </div>
+        </div>
     );
 }
