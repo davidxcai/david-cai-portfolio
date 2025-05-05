@@ -1,7 +1,4 @@
-import { NavLink } from "react-router";
-import { Anchor } from "@mantine/core";
-import { useHover } from "@mantine/hooks";
-import { useSidebar } from "../context/SidebarContext";
+import { NavLink, useLocation } from "react-router-dom";
 
 const links = [
     { label: "Home", link: "/" },
@@ -10,44 +7,34 @@ const links = [
     { label: "Resume", link: "/resume" },
 ];
 
-interface NavItemProps {
-    label: string;
-    link: string;
-    onClick: () => void;
-}
+// TODO:
+// - add scroll to top on link click
+// possibly remove scroll to top on path change
 
-function NavItem({ label, link, onClick }: NavItemProps) {
-    const { hovered, ref } = useHover();
-    return (
-        <Anchor
-            variant={hovered ? "gradient" : "text"}
-            gradient={hovered ? { from: "indigo", to: "blue" } : undefined}
-            c="white"
-            component={NavLink}
-            onClick={onClick}
-            to={link}
-            className="p-2"
-            underline="never"
-            fw={700}
-            ref={ref}
-        >
-            {label}
-        </Anchor>
-    );
-}
+export function NavLinks({
+    toggle,
+    opened,
+}: {
+    toggle?: () => void;
+    opened?: boolean;
+}) {
+    const { pathname } = useLocation();
 
-export function Navlinks() {
-    const sidebar = useSidebar();
-    const closeSidebar = sidebar[1].close;
     return (
         <>
             {links.map((link) => (
-                <NavItem
+                <NavLink
                     key={link.label}
-                    label={link.label}
-                    link={link.link}
-                    onClick={closeSidebar}
-                />
+                    to={link.link}
+                    onClick={opened ? toggle : undefined}
+                    className={`font-semibold hover:text-indigo-500 uppercase text-sm ${
+                        pathname === link.link
+                            ? "text-indigo-500"
+                            : "text-white"
+                    }`}
+                >
+                    {link.label}
+                </NavLink>
             ))}
         </>
     );

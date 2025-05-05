@@ -1,5 +1,5 @@
 import { Project as ProjectType } from "../data/projects";
-import { Badge, Text } from "@mantine/core";
+import { Badge } from "@mantine/core";
 
 export function Project({ project }: { project: ProjectType }) {
     function technologies() {
@@ -22,9 +22,7 @@ export function Project({ project }: { project: ProjectType }) {
             />
             <div className="flex flex-col">
                 <h2 className="text-2xl font-bold mt-2">{project.name}</h2>
-                <Text c="dimmed" size="sm" className="text-wrap">
-                    {project.description}
-                </Text>
+                <p className="text-gray-500 text-sm">{project.description}</p>
                 <div className="flex flex-row gap-2 mt-2">{technologies()}</div>
             </div>
         </div>
