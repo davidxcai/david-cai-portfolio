@@ -17,23 +17,23 @@ export const projects: Project[] = [
     },
     {
         name: "Matcha Mail",
-        description: "My personal portfolio website.",
-        technologies: ["Supabase", "Shadcn", "Tailwind CSS"],
+        description: "Snail mail app.",
+        technologies: ["Supabase", "Mantine UI", "Tailwind CSS"],
         image: matcha,
         url: "https://matcha-steel.vercel.app",
     },
     {
         name: "PokeDex",
-        description: "Gemini API implementation.",
+        description: "Gemini API implementation for HackDay competition.",
         technologies: ["Gemini API", "Vite", "Tailwind CSS"],
         image: "/",
         url: "google.com",
     },
-    {
-        name: "E-Commerce",
-        description: "Built with shopify.",
-        technologies: ["React", "TypeScript", "Tailwind CSS"],
-        image: "/",
-        url: "google.com",
-    },
+    // {
+    //     name: "E-Commerce",
+    //     description: "Built with shopify.",
+    //     technologies: ["React", "TypeScript", "Tailwind CSS"],
+    //     image: "/",
+    //     url: "google.com",
+    // },
 ];
