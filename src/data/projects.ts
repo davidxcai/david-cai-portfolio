@@ -1,5 +1,5 @@
-import mobiAdminPortal from "../assets/mobi-admin-portal.png";
-import matcha from "../assets/matcha.png";
+import mobiAdminPortal from "../assets/mobi-admin-portal.webp";
+import matcha from "../assets/matcha.webp";
 export type Project = {
     name: string;
     description: string;
