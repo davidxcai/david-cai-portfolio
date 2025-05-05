@@ -26,14 +26,14 @@ export const projects: Project[] = [
         name: "PokeDex",
         description: "Gemini API implementation.",
         technologies: ["Gemini API", "Vite", "Tailwind CSS"],
-        image: "/images/portfolio.png",
+        image: "/",
         url: "google.com",
     },
     {
         name: "E-Commerce",
         description: "Built with shopify.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
-        image: "/images/portfolio.png",
+        image: "/",
         url: "google.com",
     },
 ];

@@ -1,19 +1,14 @@
-import { Flex } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { ProfilePicture } from "../assets/ProfilePicture";
+// import { ProfilePicture } from "../assets/ProfilePicture";
 import { NavLink } from "react-router-dom";
+import vector from "../assets/profile-picture.svg";
 
 export function HeroSection() {
     const isMobile = useMediaQuery("(max-width: 768px)");
     return (
-        <Flex
-            justify="center"
-            align="center"
-            gap="lg"
-            wrap={{ base: "wrap", sm: "nowrap" }}
-            className="mb-16 md:mb-24"
-        >
-            <ProfilePicture />
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 max-w-7xl mx-auto mb-16">
+            <object data={vector} className=" size-75 sm:size-150" />
+            {/* <ProfilePicture /> */}
             <div className="flex flex-col flex-wrap gap-12 w-full md:w-1/2">
                 <div>
                     <h1 className="text-7xl sm:text-9xl font-bold nanum-text text-center md:text-left">
@@ -32,7 +27,7 @@ export function HeroSection() {
                     </NavLink>
                 )}
             </div>
-        </Flex>
+        </div>
     );
 }
 {
