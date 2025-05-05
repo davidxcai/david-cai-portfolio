@@ -1,6 +1,6 @@
 import { Burger, Collapse, Portal } from "@mantine/core";
 import { NavLink, useLocation } from "react-router-dom";
-import { NavLinks } from "./";
+import { NavLinks } from "./NavLinks";
 import { useMediaQuery, useDisclosure } from "@mantine/hooks";
 
 // TODO:
