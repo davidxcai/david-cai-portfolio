@@ -13,10 +13,10 @@ export function Footer() {
                 <Group justify="center">
                     <SocialLinks />
                 </Group>
-                <p className="text-gray-500">
+                <p className="text-gray-300">
                     React · TypeScript · Mantine · Tailwind · Vite
                 </p>
-                <p className="text-gray-500">© 2025 David Cai</p>
+                <p className="text-gray-300">© 2025 David Cai</p>
             </div>
         </footer>
     );
