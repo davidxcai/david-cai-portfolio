@@ -3,8 +3,6 @@ import { createRoot } from "react-dom/client";
 import { MantineProvider } from "@mantine/core";
 import { BrowserRouter } from "react-router";
 
-import "@fontsource/nanum-pen-script/index.css";
-
 import "@mantine/core/styles.css";
 
 import "./styles.css";
