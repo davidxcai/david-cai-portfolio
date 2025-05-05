@@ -7,7 +7,11 @@ export function HeroSection() {
     const isMobile = useMediaQuery("(max-width: 768px)");
     return (
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 max-w-7xl mx-auto mb-16">
-            <object data={vector} className=" size-75 sm:size-150" />
+            <img
+                src={vector}
+                className=" size-75 sm:size-150"
+                alt="Silhouette outline of David Cai"
+            />
             {/* <ProfilePicture /> */}
             <div className="flex flex-col flex-wrap gap-12 w-full md:w-1/2">
                 <div>
