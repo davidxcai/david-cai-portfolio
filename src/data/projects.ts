@@ -1,5 +1,6 @@
 import mobiAdminPortal from "../assets/mobi-admin-portal.webp";
 import matcha from "../assets/matcha.webp";
+import pokedex from "../assets/pokedex.webp";
 export type Project = {
     name: string;
     description: string;
@@ -26,7 +27,7 @@ export const projects: Project[] = [
         name: "PokeDex",
         description: "Gemini API implementation for HackDay competition.",
         technologies: ["Gemini API", "Vite", "Tailwind CSS"],
-        image: "/",
+        image: pokedex,
         url: "google.com",
     },
     // {
