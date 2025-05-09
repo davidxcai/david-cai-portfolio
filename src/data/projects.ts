@@ -28,7 +28,7 @@ export const projects: Project[] = [
         description: "Gemini API implementation for HackDay competition.",
         technologies: ["Gemini API", "Vite", "Tailwind CSS"],
         image: pokedex,
-        url: "google.com",
+        url: "https://pokedex-bice-xi.vercel.app",
     },
     // {
     //     name: "E-Commerce",
