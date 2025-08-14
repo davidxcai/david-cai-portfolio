@@ -1,5 +1,5 @@
 import mobiAdminPortal from "../assets/mobi-admin-portal.webp";
-import matcha from "../assets/matcha.webp";
+import mobiUser from "../assets/mobi-user-website.webp";
 import pokedex from "../assets/pokedex.webp";
 export type Project = {
     name: string;
@@ -17,11 +17,11 @@ export const projects: Project[] = [
         url: "https://mobi-admin-portal.vercel.app/",
     },
     {
-        name: "Matcha Mail",
-        description: "Snail mail app.",
-        technologies: ["Supabase", "Mantine UI", "Tailwind CSS"],
-        image: matcha,
-        url: "https://matcha-steel.vercel.app",
+        name: "Mobi Website",
+        description: "Public website for student organization.",
+        technologies: ["Supabase", "Chakra UI", "TanStack Query", "React"],
+        image: mobiUser,
+        url: "https://mobi-user-website.vercel.app/",
     },
     {
         name: "PokeDex",

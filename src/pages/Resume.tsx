@@ -107,22 +107,18 @@ export function Resume() {
                 <div className={styles.section}>
                     <div className={styles.between}>
                         <h2 className={styles.subheading}>
-                            Matcha {"(Ongoing)"}
+                            Mobi User Website {"(Ongoing)"}
                         </h2>
                         <h2 className={styles.subheading}>
                             Vite, Supabase, TanStack Query
                         </h2>
                     </div>
                     <ul className={styles.list}>
+                        <li> Retrieves event data for public viewing.</li>
                         <li>
                             {" "}
-                            Integrated web sockets for instant nofication of
-                            messages.
-                        </li>
-                        <li>
-                            {" "}
-                            Built interactice messaging tracking system to
-                            visualize delivery.
+                            Implements responsive design for mobile and desktop
+                            views.
                         </li>
                         <li>
                             {" "}
