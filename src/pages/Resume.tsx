@@ -9,7 +9,7 @@ import { SocialLinks } from "../components";
 const divider = <div className="border-t-1 border-dashed border-gray-700" />;
 
 const styles = {
-    container: "flex flex-col gap-8",
+    container: "flex flex-col gap-8 mt-20",
     section: "flex flex-col gap-4",
     subsection: "flex flex-col gap-1",
     heading: "font-semibold text-2xl",
@@ -36,8 +36,32 @@ export function Resume() {
                 </div>
             </div>
 
-            {/* Summary */}
+            {/* Education */}
             <div className={styles.section}>
+                <h2 className={styles.heading}>Education</h2>
+                {divider}
+                <div className={styles.subsection}>
+                    <div className={styles.between}>
+                        <p>University of Texas at Arlington</p>
+                        <p>2024 - 2027</p>
+                    </div>
+                    <p className={styles.dimmed}>
+                        Computer Science B.S. / Honors College, 3.5 GPA
+                    </p>
+                </div>
+                <div className={styles.subsection}>
+                    <div className={styles.between}>
+                        <p>University of California, Irvine</p>
+                        <p>2018 - 2019</p>
+                    </div>
+                    <p className={styles.dimmed}>
+                        Web Development Certificate / Agile and SCRUM training
+                    </p>
+                </div>
+            </div>
+
+            {/* Summary */}
+            {/* <div className={styles.section}>
                 <h2 className={styles.heading}>Summary</h2>
                 {divider}
                 <p>
@@ -47,7 +71,7 @@ export function Resume() {
                     applications. Proficient in communications and team
                     management with leadership experience.
                 </p>
-            </div>
+            </div> */}
 
             {/* Technical Skills */}
             <div className={styles.section}>
@@ -150,30 +174,6 @@ export function Resume() {
                         fundraising events.
                     </li>
                 </ul>
-            </div>
-
-            {/* Education */}
-            <div className={styles.section}>
-                <h2 className={styles.heading}>Education</h2>
-                {divider}
-                <div className={styles.subsection}>
-                    <div className={styles.between}>
-                        <p>University of Texas at Arlington</p>
-                        <p>2024 - 2027</p>
-                    </div>
-                    <p className={styles.dimmed}>
-                        Computer Science B.S. / Honors College, 4.0 GPA
-                    </p>
-                </div>
-                <div className={styles.subsection}>
-                    <div className={styles.between}>
-                        <p>University of California, Irvine</p>
-                        <p>2018 - 2019</p>
-                    </div>
-                    <p className={styles.dimmed}>
-                        Web Development Certificate / Agile and SCRUM training
-                    </p>
-                </div>
             </div>
 
             <div className="flex justify-center my-4">

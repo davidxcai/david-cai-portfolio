@@ -12,10 +12,10 @@ import { Routes, Route } from "react-router";
 
 function App() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-dvh">
             <ScrollToTop />
             <Navbar />
-            <div className="max-w-7xl p-4 mt-20 flex flex-col mx-auto mb-8">
+            <div className="max-w-7xl p-4 flex flex-col mx-auto mb-8">
                 <Routes>
                     <Route index element={<Homepage />} />
                     <Route path="/projects" element={<Homepage />} />
