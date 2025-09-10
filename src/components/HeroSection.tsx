@@ -2,6 +2,7 @@ import { useMediaQuery } from "@mantine/hooks";
 // import { ProfilePicture } from "../assets/ProfilePicture";
 import { NavLink } from "react-router-dom";
 import { AnimatedDrawing } from "../assets/AnimatedDrawing";
+import { FadeInOnLoad } from "../helper/FadeInOnLoad";
 
 export function HeroSection() {
     const isMobile = useMediaQuery("(max-width: 768px)");
@@ -17,14 +18,16 @@ export function HeroSection() {
 
             {/* <ProfilePicture /> */}
             <div className="flex flex-col flex-wrap gap-12 w-full md:w-1/2">
-                <div>
-                    <h1 className="text-7xl sm:text-9xl font-bold nanum-text text-center md:text-left">
-                        I'm David
-                    </h1>
-                    <h2 className="text-gray-400 text-3xl sm:text-5xl nanum-text text-center md:text-left">
-                        A fullstack web developer & computer science student
-                    </h2>
-                </div>
+                <FadeInOnLoad>
+                    <div>
+                        <h1 className="text-7xl sm:text-9xl font-bold nanum-text text-center md:text-left">
+                            I'm David
+                        </h1>
+                        <h2 className="text-gray-400 text-3xl sm:text-5xl nanum-text text-center md:text-left">
+                            A fullstack web developer & computer science student
+                        </h2>
+                    </div>
+                </FadeInOnLoad>
                 {isMobile && (
                     <NavLink
                         to="/resume"

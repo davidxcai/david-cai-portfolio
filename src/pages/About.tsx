@@ -6,6 +6,7 @@ import {
     IconSchool,
     IconBrandLinkedin,
 } from "@tabler/icons-react";
+import { FadeInOnLoad } from "../helper/FadeInOnLoad";
 
 // TODO:
 // add a general about section with a short bio and fun facts + pictures
