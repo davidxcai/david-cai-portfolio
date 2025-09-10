@@ -1,17 +1,20 @@
 import { useMediaQuery } from "@mantine/hooks";
 // import { ProfilePicture } from "../assets/ProfilePicture";
 import { NavLink } from "react-router-dom";
-import vector from "../assets/profile-picture.svg";
+import { AnimatedDrawing } from "../assets/AnimatedDrawing";
 
 export function HeroSection() {
     const isMobile = useMediaQuery("(max-width: 768px)");
     return (
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 max-w-7xl mx-auto mb-16 min-h-dvh">
-            <img
-                src={vector}
-                className=" size-100 sm:size-150"
-                alt="Silhouette outline of David Cai"
-            />
+            <div
+                className={`h-full flex-grow aspect-[852/1077] ${
+                    isMobile ? "mt-20" : ""
+                }`}
+            >
+                <AnimatedDrawing />
+            </div>
+
             {/* <ProfilePicture /> */}
             <div className="flex flex-col flex-wrap gap-12 w-full md:w-1/2">
                 <div>

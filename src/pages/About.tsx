@@ -16,13 +16,13 @@ const data = [
     {
         title: "Coding Bootcamp",
         icon: <IconCode size={iconSize} />,
-        desc: "Out of curiosity, I signed up for a coding bootcamp at UC Irvine and started learning web development. This is where my passion began!",
+        desc: "Out of curiosity, I signed up for a coding bootcamp at UC Irvine and started learning web development and I discovered my love for coding.",
         time: `${currentYear - 2019} years ago`,
     },
     {
         title: "Moved to Dallas, TX",
         icon: <IconPlane size={iconSize} />,
-        desc: "After a lot of consideration, I decided to pursue a Bachelor's degree in computer science and learn more about software and programming.",
+        desc: "After a lot of consideration, I decided to pursue a Bachelor's degree in computer science to learn more about software and programming.",
         time: `${currentYear - 2020} years ago`,
     },
     {
@@ -38,7 +38,7 @@ const data = [
         time: "Today",
     },
     {
-        title: "Fingers crossed",
+        title: "Graduation & Job Search",
         icon: <IconBrandLinkedin size={iconSize} />,
         desc: "I'll be graduating in Spring of 2027. Hopefully if you're a recruiter and reading this, I want you to know that I'll be applying to your company and hopefully become a future software engineer for you.",
         time: "Estimated 2027",
@@ -48,9 +48,11 @@ const data = [
 export function About() {
     return (
         <>
-            <h1 className="nanum-text text-5xl text-center mb-4">Dev Log</h1>
+            <h1 className="nanum-text text-5xl text-center mb-4 mt-20">
+                Dev Log
+            </h1>
             <Timeline active={3} bulletSize={32} lineWidth={1} color="indigo">
-                {data.map((item) => {
+                {data.map((item, index) => {
                     return (
                         <Timeline.Item
                             key={item.title}
@@ -59,7 +61,12 @@ export function About() {
                             lineVariant="dashed"
                         >
                             <Text c="dimmed">{item.desc}</Text>
-                            <Text size="xs" mt={4} fw={700}>
+                            <Text
+                                size="xs"
+                                mt={4}
+                                fw={700}
+                                c={index === 4 ? "indigo" : "dimmed"}
+                            >
                                 {item.time}
                             </Text>
                         </Timeline.Item>
