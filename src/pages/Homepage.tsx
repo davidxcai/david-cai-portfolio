@@ -10,12 +10,12 @@ import { Projects } from "./";
 // fix name header to be full width on mobile
 
 export function Homepage() {
-    return (
-        <div className="min-h-full flex flex-col">
-            <HeroSection />
-            <Projects />
-        </div>
-    );
+  return (
+    <div className="min-h-screen flex flex-col">
+      <HeroSection />
+      <Projects />
+    </div>
+  );
 }
 // className="text-white flex flex-row justify-between items-center gap-8 mb-32 flex-wrap"
 // className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
