@@ -6,7 +6,6 @@ import { Projects } from "./";
 // projects will be loaded as links in project list section
 // - on project click, project list will unmount and will redirect to /project/:projectname
 // - on back click, project list will mount and redirect to /projects
-// fix animejs animation for svg
 // fix name header to be full width on mobile
 
 export function Homepage() {
