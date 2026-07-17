@@ -138,19 +138,6 @@
 %--------------------------------
 
 
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: JavaScript/TypeScript, HTML/CSS, Python, C, Java, SQL} \\
-     \textbf{Frameworks}{: React, Express.js, LangGraph, SQLAlchemy} \\
-     \textbf{AI/ML \& Data}{: Retrieval-Augmented Generation (RAG), Anthropic Claude API, OpenAI API, Chroma, pandas, JupyterHub} \\
-     \textbf{Developer Tools}{: Git, GitHub, GitHub Actions, Vercel, Supabase, Google Cloud Platform, VS Code, IntelliJ, Eclipse, PostgreSQL, MongoDB, RESTful APIs, Node.js} \\
-     \textbf{Libraries}{: Redux, TanStack Query, Recharts, Tailwind CSS, shadcn/ui, Mantine UI, Chakra UI}
-    }}
- \end{itemize}
-%-------------------------------------------
-
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
@@ -174,14 +161,27 @@
       \resumeProjectHeading
           {\textbf{Egg Basket} $|$ \emph{Python, LangGraph, PostgreSQL, React/TypeScript, Vercel}}{Jun 2026 -- Present}
           \resumeItemListStart
-            \resumeItem{Built a hierarchical multi-agent system in Python/LangGraph where three Claude Haiku analyst workers (fundamental, technical, sentiment) feed a Claude Sonnet supervisor that sets portfolio weights across a 10-ticker universe, paper-trading a \$100k book against an equal-weight benchmark.}
-            \resumeItem{Ingested and normalized market and filings data from four external APIs (Twelve Data, Alpha Vantage, yfinance, SEC EDGAR) into PostgreSQL via SQLAlchemy, backing every agent decision with an auditable record.}
-            \resumeItem{Enforced every allocation through a deterministic, code-only risk guardrail (25\% position cap, 5\% cash floor, proportional scale-down) so the LLM narrates but never sets structure, with fill-price collars and bar-staleness gates rejecting bad executions before the ledger.}
-            \resumeItem{Designed a two-phase execution model, deciding weights pre-market on settled data and computing share counts at the open, with idempotent all-or-nothing writes and automated post-trade reconciliation making unattended daily runs on GitHub Actions safe to retry.}
-            \resumeItem{Shipped the research dashboard as a React 19 + TypeScript SPA on Vercel (TanStack Query, Recharts, Tailwind/shadcn) with serverless intraday polling, publishing every agent decision, its reasoning, and its performance vs. benchmark for public inspection.}
+            \resumeItem{Designed a hierarchical multi-agent architecture in Python/LangGraph for an autonomous investing research system: three Claude Haiku workers evaluate independent signals in parallel and report to a Claude Sonnet supervisor that reconciles them into one allocation, reserving the stronger model for the judgment step.}
+            \resumeItem{Constrained the LLM to narration rather than structure by routing every decision through a deterministic, code-only guardrail layer (25\% position cap, 5\% cash floor, proportional scale-down), so agent output cannot violate an invariant regardless of what the model returns.}
+            \resumeItem{Split decision from execution across two phases: agents emit dimensionless target weights that a deterministic executor later resolves into concrete orders, keeping model output reproducible and decoupled from live market prices.}
+            \resumeItem{Made unattended daily runs safe to retry using idempotent all-or-nothing writes and an automated post-run integrity check, orchestrated on GitHub Actions.}
+            \resumeItem{Modeled an auditable data layer in PostgreSQL/SQLAlchemy over four external market APIs, and shipped a React 19 + TypeScript dashboard on Vercel publishing every agent decision and its reasoning.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 %--------------------------------
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: JavaScript/TypeScript, HTML/CSS, Python, C, Java, SQL} \\
+     \textbf{Frameworks}{: React, Express.js, LangGraph, SQLAlchemy} \\
+     \textbf{AI/ML \& Data}{: Retrieval-Augmented Generation (RAG), Anthropic Claude API, OpenAI API, Chroma, pandas, JupyterHub} \\
+     \textbf{Developer Tools}{: Git, GitHub, GitHub Actions, Vercel, Supabase, Google Cloud Platform, VS Code, IntelliJ, Eclipse, PostgreSQL, MongoDB, RESTful APIs, Node.js} \\
+     \textbf{Libraries}{: Redux, TanStack Query, Recharts, Tailwind CSS, shadcn/ui, Mantine UI, Chakra UI}
+    }}
+ \end{itemize}
+%-------------------------------------------
 
 %-----------EXPERIENCE-----------
 \section{Student Organization}
