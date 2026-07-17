@@ -1,6 +1,10 @@
 import { Button } from "@mantine/core";
-import { IconDownload } from "@tabler/icons-react";
+// Deep import, not the "@tabler/icons-react" barrel: the barrel re-exports ~5900
+// icon modules, which Vite serves as ~5900 separate dev requests on first load.
+import IconDownload from "@tabler/icons-react/dist/esm/icons/IconDownload.mjs";
 import { SocialLinks } from "../components";
+import { resume } from "../data/resume";
+import type { InlineNode } from "../helper/parseResume";
 
 // TODO:
 // fix list item marker
@@ -20,12 +24,60 @@ const styles = {
     between: "flex flex-wrap justify-between",
 };
 
+function Rich({ nodes }: { nodes: InlineNode[] }) {
+    return (
+        <>
+            {nodes.map((node, index) => (
+                <RichNode key={index} node={node} />
+            ))}
+        </>
+    );
+}
+
+function RichNode({ node }: { node: InlineNode }) {
+    switch (node.type) {
+        case "text":
+            return <>{node.value}</>;
+        case "bold":
+            return (
+                <strong className={styles.subheading}>
+                    <Rich nodes={node.children} />
+                </strong>
+            );
+        case "italic":
+            return (
+                <em>
+                    <Rich nodes={node.children} />
+                </em>
+            );
+        case "underline":
+            return (
+                <span className="underline">
+                    <Rich nodes={node.children} />
+                </span>
+            );
+        case "link":
+            return (
+                <a
+                    href={node.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-teal-500 hover:underline"
+                >
+                    <Rich nodes={node.children} />
+                </a>
+            );
+        case "br":
+            return <br />;
+    }
+}
+
 export function Resume() {
     return (
         <div className={styles.container}>
             {/* Header */}
             <div className={styles.section}>
-                <h1 className="font-bold text-3xl">David Xien Cai</h1>
+                <h1 className="font-bold text-3xl">{resume.name}</h1>
                 <p className="text-teal-500">
                     {" "}
                     <span className="font-bold">Status:</span> Looking for
@@ -36,145 +88,60 @@ export function Resume() {
                 </div>
             </div>
 
-            {/* Education */}
-            <div className={styles.section}>
-                <h2 className={styles.heading}>Education</h2>
-                {divider}
-                <div className={styles.subsection}>
-                    <div className={styles.between}>
-                        <p>University of Texas at Arlington</p>
-                        <p>2024 - 2027</p>
-                    </div>
-                    <p className={styles.dimmed}>
-                        Computer Science B.S. / Honors College, 3.5 GPA
-                    </p>
-                </div>
-                <div className={styles.subsection}>
-                    <div className={styles.between}>
-                        <p>University of California, Irvine</p>
-                        <p>2018 - 2019</p>
-                    </div>
-                    <p className={styles.dimmed}>
-                        Web Development Certificate / Agile and SCRUM training
-                    </p>
-                </div>
-            </div>
+            {/* Every section below is rendered from public/resume.tex */}
+            {resume.sections.map((section) => (
+                <div key={section.title} className={styles.section}>
+                    <h2 className={styles.heading}>{section.title}</h2>
+                    {divider}
 
-            {/* Summary */}
-            {/* <div className={styles.section}>
-                <h2 className={styles.heading}>Summary</h2>
-                {divider}
-                <p>
-                    Computer science student graduating in spring 2027 and
-                    fullstack web developer with 2+ years of experience
-                    designing, developing, and managing sites and internal
-                    applications. Proficient in communications and team
-                    management with leadership experience.
-                </p>
-            </div> */}
+                    {section.lines.map((line, index) => (
+                        <p key={index}>
+                            <Rich nodes={line} />
+                        </p>
+                    ))}
 
-            {/* Technical Skills */}
-            <div className={styles.section}>
-                <h2 className={styles.heading}>Technical Skills</h2>
-                {divider}
-                <p>
-                    <span className={styles.subheading}>
-                        Programming Languages:{" "}
-                    </span>
-                    TypeScript, JavaScript, Node.js, ReactJS, SQL, NoSQL,
-                    Python, C, C++
-                </p>
-                <p>
-                    <span className={styles.subheading}>
-                        Operating Systems:{" "}
-                    </span>
-                    macOS, Windows
-                </p>
-                <p>
-                    <span className={styles.subheading}>Tools: </span>Tailwind,
-                    Sass, Mantine UI, Redux, TanStack Query, Supabase, Vercel
-                </p>
-            </div>
+                    {section.entries.map((entry, index) => (
+                        <div key={index} className={styles.subsection}>
+                            <div className={styles.between}>
+                                <p
+                                    className={
+                                        entry.kind === "subheading"
+                                            ? styles.subheading
+                                            : undefined
+                                    }
+                                >
+                                    <Rich nodes={entry.topLeft} />
+                                </p>
+                                <p className={styles.dimmed}>
+                                    <Rich nodes={entry.topRight} />
+                                </p>
+                            </div>
 
-            {/* Projects */}
-            <div className={styles.section}>
-                <h2 className={styles.heading}>Projects</h2>
-                {divider}
-                <div className={styles.section}>
-                    <div className={styles.between}>
-                        <h2 className={styles.subheading}>
-                            Mobi Admin Portal {"(Ongoing)"}
-                        </h2>
-                        <h2 className={styles.subheading}>
-                            ReactJS, Node.js, MongoDB
-                        </h2>
-                    </div>
-                    <ul className={styles.list}>
-                        <li>
-                            {" "}
-                            Improving analytics accuracy by 80% from designing
-                            and developing internal admin application for
-                            managing users and logging event attendance.
-                        </li>
-                        <li>
-                            {" "}
-                            Responsible for database architecure, server
-                            configuration, and optimizing API requests.
-                        </li>
-                        <li>
-                            {" "}
-                            Implemented role-based authentication and increased
-                            site security by 100%.
-                        </li>
-                    </ul>
+                            {(entry.bottomLeft.length > 0 ||
+                                entry.bottomRight.length > 0) && (
+                                <div className={styles.between}>
+                                    <p className={styles.dimmed}>
+                                        <Rich nodes={entry.bottomLeft} />
+                                    </p>
+                                    <p className={styles.dimmed}>
+                                        <Rich nodes={entry.bottomRight} />
+                                    </p>
+                                </div>
+                            )}
+
+                            {entry.items.length > 0 && (
+                                <ul className={styles.list}>
+                                    {entry.items.map((item, itemIndex) => (
+                                        <li key={itemIndex}>
+                                            <Rich nodes={item} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    ))}
                 </div>
-                <div className={styles.section}>
-                    <div className={styles.between}>
-                        <h2 className={styles.subheading}>
-                            Mobi User Website {"(Ongoing)"}
-                        </h2>
-                        <h2 className={styles.subheading}>
-                            Vite, Supabase, TanStack Query
-                        </h2>
-                    </div>
-                    <ul className={styles.list}>
-                        <li> Retrieves event data for public viewing.</li>
-                        <li>
-                            {" "}
-                            Implements responsive design for mobile and desktop
-                            views.
-                        </li>
-                        <li>
-                            {" "}
-                            Implemented secure user authentication and
-                            end-to-end encryption.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            {/* Student Organization */}
-            <div className={styles.section}>
-                <h2 className={styles.heading}>Student Organization</h2>
-                {divider}
-                <h2 className={styles.subheading}>
-                    Treasurer of Web Development club
-                </h2>
-                <ul className={styles.list}>
-                    <li>
-                        Manage and maintain organization funds, perform internal
-                        finance audits, and filing annual taxes and earnings.
-                    </li>
-                    <li>
-                        Organize and host workshops on web development
-                        technologies.
-                    </li>
-                    <li>
-                        Collaborate with adjacent organizations to host
-                        fundraising events.
-                    </li>
-                </ul>
-            </div>
+            ))}
 
             <div className="flex justify-center my-4">
                 <Button

@@ -1,10 +1,10 @@
 import { Button, Tooltip, CopyButton } from "@mantine/core";
-import {
-    IconBrandGithub,
-    IconBrandLinkedin,
-    IconCopy,
-    IconCheck,
-} from "@tabler/icons-react";
+// Deep imports, not the "@tabler/icons-react" barrel: the barrel re-exports ~5900
+// icon modules, which Vite serves as ~5900 separate dev requests on first load.
+import IconBrandGithub from "@tabler/icons-react/dist/esm/icons/IconBrandGithub.mjs";
+import IconBrandLinkedin from "@tabler/icons-react/dist/esm/icons/IconBrandLinkedin.mjs";
+import IconCopy from "@tabler/icons-react/dist/esm/icons/IconCopy.mjs";
+import IconCheck from "@tabler/icons-react/dist/esm/icons/IconCheck.mjs";
 
 export function SocialLinks() {
     return (
