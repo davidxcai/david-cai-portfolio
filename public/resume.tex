@@ -1,0 +1,202 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% glyphtounicode is pdftex-only; guard so XeTeX/tectonic builds work too
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+\fi
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape David Cai} \\ \vspace{1pt}
+    \small 626-271-4991 $|$ \href{mailto:davidxcai@gmail.com}{\underline{davidxcai@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/davidxiencai}{\underline{linkedin.com/in/davidxiencai}} $|$
+    \href{https://github.com/davidxcai}{\underline{github.com/davidxcai}}
+\end{center}
+%--------------------------------
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Texas at Arlington}{Arlington, TX}
+      {Bachelor of Science in Computer Science}{Dec 2027}
+    \resumeSubheading
+      {University of California, Irvine}{Irvine, CA}
+      {Full Stack Development Certificate}{Oct 2018 -- Apr 2019}
+  \resumeSubHeadingListEnd
+%--------------------------------
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: JavaScript/TypeScript, HTML/CSS, Python, C, Java, SQL} \\
+     \textbf{Frameworks}{: React, Express.js, LangGraph, SQLAlchemy} \\
+     \textbf{AI/ML \& Data}{: Retrieval-Augmented Generation (RAG), Anthropic Claude API, OpenAI API, Chroma, pandas, JupyterHub} \\
+     \textbf{Developer Tools}{: Git, GitHub, GitHub Actions, Vercel, Supabase, Google Cloud Platform, VS Code, IntelliJ, Eclipse, PostgreSQL, MongoDB, RESTful APIs, Node.js} \\
+     \textbf{Libraries}{: Redux, TanStack Query, Recharts, Tailwind CSS, shadcn/ui, Mantine UI, Chakra UI}
+    }}
+ \end{itemize}
+%-------------------------------------------
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer Intern, Technology Internship Program}{Jun 2026 -- Aug 2026}
+      {Capital One}{Plano, TX}
+      \resumeItemListStart
+        \resumeItem{Built and shipped an AI summarization pipeline in Python/JupyterHub that ingests live loan application data from an internal API, preprocesses it, and generates summaries explaining why a case remains pending, replacing manual document review; adopted by the auto loan funding team and rolling out to nearly 100 users.}
+        \resumeItem{Implemented retrieval-augmented generation (RAG) using a Chroma vector store and OpenAI embeddings to ground gpt-oss-120b summaries in source documents, sharply reducing the hallucinations that made early output unusable.}
+        \resumeItem{Proposed and led a user feedback loop, running recurring accuracy surveys and live demos with end users and iterating on prompts and retrieval over several weeks to reach an 80\% user-rated accuracy rate.}
+        \resumeItem{Cut per-case context gathering from 4 minutes to 2 minutes, partnering weekly with a project manager, data scientist, and UI/UX designer to align goals and prioritize iterations.}
+        \resumeItem{Shipped the prototype to a runtime environment after management review and handed it off as the foundation for the next team to build on.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%--------------------------------
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Egg Basket} $|$ \emph{Python, LangGraph, PostgreSQL, React/TypeScript, Vercel}}{Jun 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Built a hierarchical multi-agent system in Python/LangGraph where three Claude Haiku analyst workers (fundamental, technical, sentiment) feed a Claude Sonnet supervisor that sets portfolio weights across a 10-ticker universe, paper-trading a \$100k book against an equal-weight benchmark.}
+            \resumeItem{Ingested and normalized market and filings data from four external APIs (Twelve Data, Alpha Vantage, yfinance, SEC EDGAR) into PostgreSQL via SQLAlchemy, backing every agent decision with an auditable record.}
+            \resumeItem{Enforced every allocation through a deterministic, code-only risk guardrail (25\% position cap, 5\% cash floor, proportional scale-down) so the LLM narrates but never sets structure, with fill-price collars and bar-staleness gates rejecting bad executions before the ledger.}
+            \resumeItem{Designed a two-phase execution model, deciding weights pre-market on settled data and computing share counts at the open, with idempotent all-or-nothing writes and automated post-trade reconciliation making unattended daily runs on GitHub Actions safe to retry.}
+            \resumeItem{Shipped the research dashboard as a React 19 + TypeScript SPA on Vercel (TanStack Query, Recharts, Tailwind/shadcn) with serverless intraday polling, publishing every agent decision, its reasoning, and its performance vs. benchmark for public inspection.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+%--------------------------------
+
+%-----------EXPERIENCE-----------
+\section{Student Organization}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Treasurer - Mobi Byte (Web Development Club)}{Jan 2025 -- Present}
+      {University of Texas at Arlington}{Arlington, TX}
+      \resumeItemListStart
+        \resumeItem{Responsible for managing club finances, including taxes, budgeting, funding allocations, purchase approvals, and financial audits.}
+        \resumeItem{Active engagement with overall club strategy, operations, and event planning as part of the leadership team.}
+        \resumeItem{Mentoring new members on development practices and tools, fostering an inclusive learning environment.}
+        \resumeItem{Design and lead technical workshops on web development topics to support member growth and engagement.}
+      \resumeItemListEnd
+      \resumeSubHeadingListEnd
+%--------------------------------
+
+\end{document}
