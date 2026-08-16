@@ -80,8 +80,8 @@ export function Resume() {
                 <h1 className="font-bold text-3xl">{resume.name}</h1>
                 <p className="text-teal-500">
                     {" "}
-                    <span className="font-bold">Status:</span> Looking for
-                    internship
+                    <span className="font-bold">Status:</span> Working as
+                    software engineer intern
                 </p>
                 <div className="flex gap-4">
                     <SocialLinks />

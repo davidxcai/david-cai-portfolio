@@ -130,7 +130,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of Texas at Arlington}{Arlington, TX}
-      {Bachelor of Science in Computer Science}{Dec 2027}
+      {Bachelor of Science in Computer Science}{May 2027}
     \resumeSubheading
       {University of California, Irvine}{Irvine, CA}
       {Full Stack Development Certificate}{Oct 2018 -- Apr 2019}
@@ -146,11 +146,11 @@
       {Software Engineer Intern, Technology Internship Program}{Jun 2026 -- Aug 2026}
       {Capital One}{Plano, TX}
       \resumeItemListStart
-        \resumeItem{Built and shipped an AI summarization pipeline in Python/JupyterHub that ingests live loan application data from an internal API, preprocesses it, and generates summaries explaining why a case remains pending, replacing manual document review; adopted by the auto loan funding team and rolling out to nearly 100 users.}
-        \resumeItem{Implemented retrieval-augmented generation (RAG) using a Chroma vector store and OpenAI embeddings to ground gpt-oss-120b summaries in source documents, sharply reducing the hallucinations that made early output unusable.}
-        \resumeItem{Proposed and led a user feedback loop, running recurring accuracy surveys and live demos with end users and iterating on prompts and retrieval over several weeks to reach an 80\% user-rated accuracy rate.}
-        \resumeItem{Cut per-case context gathering from 4 minutes to 2 minutes, partnering weekly with a project manager, data scientist, and UI/UX designer to align goals and prioritize iterations.}
-        \resumeItem{Shipped the prototype to a runtime environment after management review and handed it off as the foundation for the next team to build on.}
+        \resumeItem{Built and shipped an AI summarization pipeline in Python/JupyterHub that ingests live loan application data via internal APIs, reducing context-gathering time from 5 minutes to 2 minutes per case for 100+ auto loan funding users.}
+        \resumeItem{Implemented retrieval-augmented generation (RAG) using a Chroma vector store and OpenAI embeddings to ground model summaries, eliminating critical hallucinations and ensuring output accuracy.}
+        \resumeItem{Spearheaded end-to-end product discovery and user research, running weekly surveys and live feedback demos with end users to iterate on prompt structures and retrieval top-k parameters, achieving an 80\% user-rated accuracy score.}
+        \resumeItem{Partnered cross-functionally with PMs, Data Scientists, and UI/UX designers to translate user friction points into prioritized technical requirements, sprint goals, and system trade-offs.}
+        \resumeItem{Accelerated workflow development via AI-assisted engineering and established comprehensive system documentation, architecture diagrams, and testing handoffs to transition the prototype into production.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 %--------------------------------
@@ -159,13 +159,13 @@
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Egg Basket} $|$ \emph{Python, LangGraph, PostgreSQL, React/TypeScript, Vercel}}{Jun 2026 -- Present}
+          {\textbf{Grapht} $|$ \emph{PostgreSQL, React/TypeScript, Vercel}}{Jul 2026 -- Present}
           \resumeItemListStart
-            \resumeItem{Designed a hierarchical multi-agent architecture in Python/LangGraph for an autonomous investing research system: three Claude Haiku workers evaluate independent signals in parallel and report to a Claude Sonnet supervisor that reconciles them into one allocation, reserving the stronger model for the judgment step.}
-            \resumeItem{Constrained the LLM to narration rather than structure by routing every decision through a deterministic, code-only guardrail layer (25\% position cap, 5\% cash floor, proportional scale-down), so agent output cannot violate an invariant regardless of what the model returns.}
-            \resumeItem{Split decision from execution across two phases: agents emit dimensionless target weights that a deterministic executor later resolves into concrete orders, keeping model output reproducible and decoupled from live market prices.}
-            \resumeItem{Made unattended daily runs safe to retry using idempotent all-or-nothing writes and an automated post-run integrity check, orchestrated on GitHub Actions.}
-            \resumeItem{Modeled an auditable data layer in PostgreSQL/SQLAlchemy over four external market APIs, and shipped a React 19 + TypeScript dashboard on Vercel publishing every agent decision and its reasoning.}
+            \resumeItem{Built a crowd-sourced skincare review platform using Next.js 16, Neon Postgres, and Vercel Blob to solve consumer credibility gaps by replacing subjective reviews with standardized, data-backed product trials.}
+            \resumeItem{Integrated the Perfect Corp YouCam AI skin analysis API to capture objective, quantitative skin metrics over time, enabling users to evaluate product efficacy through empirical data rather than qualitative claims.}
+            \resumeItem{Developed a computer vision preprocessing pipeline (BlazeFace) with quality gating and lighting/pose normalization to ensure uniform photo captures for accurate AI skin comparisons.}
+            \resumeItem{Built a web-scraping pipeline to aggregate a catalog of 180k+ skincare products and 20k+ ingredients, allowing users to analyze routines, compare skin profiles, and explore targeted formulations.}
+            \resumeItem{Designed a privacy-focused media architecture on Vercel Blob and Neon Postgres, handling secure storage of user trial photos, routine logs, and multi-metric skin analysis records.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 %--------------------------------
