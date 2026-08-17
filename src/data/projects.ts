@@ -1,6 +1,6 @@
-import mobiAdminPortal from "../assets/mobi-admin-portal.webp";
 import mobiUser from "../assets/mobi-user-website.webp";
 import pokedex from "../assets/pokedex.webp";
+import grapht from "../assets/skin-tracker.webp";
 export type Project = {
     name: string;
     description: string;
@@ -10,11 +10,11 @@ export type Project = {
 };
 export const projects: Project[] = [
     {
-        name: "Mobi Admin Portal",
-        description: "Admin Dashboard for student organization.",
-        technologies: ["React", "Supabase", "Typescript"],
-        image: mobiAdminPortal,
-        url: "https://mobi-admin-portal.vercel.app/",
+        name: "Grapht",
+        description: "Search skincare products to see real-world results.",
+        technologies: ["Next.js", "Neon Postgres", "OAuth", "Tailwind CSS", "shadcn/ui", "YouCam API"],
+        image: grapht,
+        url: "https://skin-tracker-beige.vercel.app",
     },
     {
         name: "Mobi Website",
